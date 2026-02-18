@@ -1,33 +1,31 @@
-# Chocolate_Bar_Ratings-Achievement-6.1-6.5
-This repository features a dual-phase analysis of digital advertising performance across Google, Meta, and TikTok. It combines a Tableau Storyboard for executive strategic insights with a Python Time-Series Analysis to test data stationarity and scalability.
-## Project Objective
-The primary goal was to identify "Efficiency Leaks" in a multi-channel advertising ecosystem. By analyzing the relationship between Ad Spend and ROAS, the project aims to move the brand from a volume-first strategy to an efficiency-first model, specifically identifying how seasonal trends and platform-specific behaviors impact the global bottom line.
+This repository features a comprehensive, multi-phase analysis of over 1,700 expert chocolate bar ratings. The project moves from exploratory data analysis to Supervised and Unsupervised Machine Learning, seeking to decode the "perfect bar" by analyzing cocoa percentages, bean origins, and manufacturer locations.
 
-## 1. Tableau Storytelling: Executive Strategy
-The Tableau portion of this project focuses on translating raw performance data into a narrative for stakeholders.
-### Key Visualizations and Analysis
-The Macro Correlation: A dual-axis analysis of global spend vs. revenue to identify historical volatility.
-The Stability Benchmark: Using distribution bands (60-80% of average) to categorize Google Ads as a Stability Anchor.
-The Scalability Roadmap: A scatter plot with platform-specific trend lines proving TikTok as the primary growth engine.
-Geographic Stress Test: A dual-axis map identifying "Red Zones" in North America during July, proving inflexible spend during seasonal slumps.
+# Project Objective
+The goal was to identify the drivers of "Elite" chocolate ratings. By analyzing the intersection of cacao genetics, terroir (geography), and processing (cocoa percentage), this project identifies high-performing regions and uses Regression and Clustering to predict quality and segment the global market.
 
-## 2. Python: Time-Series Analysis 
-This phase involved rigorous statistical testing to determine if advertising performance data is stationary and suitable for forecasting.
-### Technical Methodology
-The analysis was executed end-to-end using the following technical workflow and tools:
-Programming Language: Python 3
-Environment: Jupyter Notebook / Anaconda
-Core Libraries: pandas, NumPy, matplotlib, seaborn, os, statsmodels.api
-Data Handling: Merging multiple Instacart datasets, robust data consistency checks, handling mixed-type columns, identifying and addressing missing/duplicate data, and deriving key variables (e.g., price ranges, loyalty status).
-Visualization: Generated multiple data visualizations (e.g., bar charts, histograms, heatmaps) to clearly communicate purchasing habits across various customer segments.
-Data Sourcing: Integrated campaign data with external time-series data from Kaggl.
-Preprocessing: Cleaned data removing columns, checking for missing data and duplicates. Smoothing data to remove noise.
-Time-Series Decomposition: Broke down data into Trend, Seasonality, and Noise/Residuals to analyze underlying patterns.
-Stationarity Testing:Performed the Augmented Dickey-Fuller (ADF) Test. 
+# 1. Exploratory Data and Geospatial Analysis
+The initial phase focused on understanding the landscape of the "Flavors of Cacao" rating system 
+## Key Insights & Visualizations
+A regression analysis exploring whether higher cocoa solids lead to higher ratings or simply increased bitterness.
+A Choropleth Map identifying "Gold Zones" where bean origin consistently results in "Premium" ratings.
+Analyzing review dates to see if the craft chocolate movement has improved in quality over the last decade.
 
-### Repository Structure
-Global-Ads-Performance |-- 01_Importing_libraries_and_data/ |-- 02_Checking_the_data/ | |--03_Cleaning_data/  |-- 04 Linechart | Smoothing_the_data/ |--05_Time_series_analysis_decomposition/ |--06_Testing_for_stationary
+## Technical Workflow
+Programming Language: Python 3Core 
+Libraries: pandas, NumPy, matplotlib, seaborn, sklearn, pylab.
+Supervised Learning (Regression): Implemented linear regression to test the correlation between cocoa percentages and expert scores, evaluating model performance via Mean Squared Error (MSE) and R-squared.
+Unsupervised Learning (Clustering): The Elbow Technique - Used to determine the optimal number of clusters for grouping chocolate bars.
+Data Wrangling: Extensive cleaning including handling inconsistent bean origins, converting percentage strings to floats, and addressing missing values in bean variety columns.3. 
 
-### Data Citation
-Main Dataset: Global Ads Performance (Google, Meta, TikTok) by Nudrat Abbas, accessed via Kaggle (CC0: Public Domain).
-Note: This dataset was synthetically generated using probabilistic modeling to reflect realistic digital advertising performance patterns across platforms, industries, and regions.
+## Repository Structure
+Chocolate-Ratings-ML/
+|-- 01_Sourcing_and_Wrangling/       # Initial data cleaning and consistency checks
+|-- 02_Exploratory_Relationships/   # Correlation matrices and scatterplots
+|-- 03_Geographical_Visualizations/ # Choropleth maps for origin analysis
+|-- 04_Supervised_Learning/         # Linear regression models
+|-- 05_Unsupervised_Learning/       # k-means clustering and elbow plots
+
+## Data Citation
+Main Dataset: Chocolate Bar Ratings compiled by Brady Brelinski, Manhattan Chocolate Society.
+License: CC0: Public Domain.
+Context: The data focuses on plain dark chocolate, evaluating Texture, Aftermelt, and Overall Opinion to provide a holistic sensory score.
